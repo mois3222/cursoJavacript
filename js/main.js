@@ -117,7 +117,7 @@ cuadradoPromise(0)
   })
   .then((obj) => {
     console.log(`Promise ${obj.value}, ${obj.resolve}`);
-    return cuadradoPromise("3");
+    return cuadradoPromise(3);
   })
   .then((obj) => {
     console.log(`Promise ${obj.value}, ${obj.resolve}`);
@@ -129,3 +129,45 @@ cuadradoPromise(0)
     console.log("Fin de la Promesa");
   })
   .catch((err) => console.error(err));
+
+/*Funciones asincronas */
+
+/*Mi promesa*/
+
+const exponencialPromise = (value) => {
+  if (typeof value !== "number")
+    return Promise.reject(`Please insert a number!!`);
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({
+        value,
+        resolve: Math.exp(value),
+      });
+    }, 0 | (Math.random() * 1000));
+  });
+};
+
+const asyncFunction = async () => {
+  try {
+    console.log(`Start Async Function`);
+    let obj = await exponencialPromise(0);
+    console.log(`Async Function "${obj.resolve}", ${obj.value}`);
+
+    obj = await exponencialPromise(1);
+    console.log(`Async Function "${obj.resolve}", ${obj.value}`);
+
+    obj = await exponencialPromise(2);
+    console.log(`Async Function "${obj.resolve}", ${obj.value}`);
+
+    obj = await exponencialPromise(3);
+    console.log(`Async Function "${obj.resolve}", ${obj.value}`);
+
+    obj = await exponencialPromise(4);
+    console.log(`Async Function "${obj.resolve}", ${obj.value}`);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+asyncFunction();
