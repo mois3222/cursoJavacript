@@ -1,0 +1,43 @@
+main {
+  width: 100vi;
+  height: 100vh;
+  border: 3px solid rebeccapurple;
+}
+
+.animation {
+  height: 135px;
+  width: 137px;
+  background-image: url("./img/ei_1675807758332-removebg-preview.png");
+
+  animation: sprite 1s steps(4) infinite;
+}
+
+.character-two {
+  height: 180px;
+  width: 137px;
+  background-image: url("./img/dctg7fr-88b18dca-d227-4556-9f25-30816b128362.png");
+
+  animation: sprite 1s steps(4) infinite;
+}
+
+.character-three {
+  height: 200px;
+  width: 137px;
+  background-image: url("./img/trback001.png");
+
+  animation: sprite 1s steps(4) infinite;
+}
+
+.character-four {
+  height: 200px;
+  width: 137px;
+  background-image: url("./img/trback000.png");
+
+  animation: sprite 1s steps(4) infinite;
+}
+
+@keyframes sprite {
+  to {
+    background-position: -674px;
+  }
+}

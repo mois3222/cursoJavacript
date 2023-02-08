@@ -1,0 +1,54 @@
+* {
+  font-family: "Itim", cursive;
+}
+
+img {
+  border-bottom: 1px solid lightseagreen;
+  border-right: 1px solid lightseagreen;
+  margin-top: 1rem;
+  /* margin: 1rem; */
+  padding: 1rem;
+  border-radius: 50px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-selector {
+  /* border: 3px solid papayawhip; */
+  width: max-content;
+  height: max-content;
+}
+
+h5 {
+  display: inline;
+  color: whitesmoke;
+}
+
+span {
+  display: inline;
+  padding: 1rem;
+  color: #808b96;
+  border-right: 1px solid white;
+  border-radius: 0px 40px 40px 0px;
+}
+
+#play {
+  transform: translate(1280%, -97%);
+  background-image: url("./img/boton-removebg-preview.png");
+  width: 68px;
+  height: 32px;
+}
+
+#play:hover {
+  animation: anima 0.5s steps(2) infinite;
+}
+
+@keyframes anima {
+  to {
+    background-position: -138px;
+  }
+}
