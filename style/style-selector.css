@@ -11,6 +11,12 @@ img {
   border-radius: 50px;
 }
 
+img:hover {
+  -webkit-box-shadow: inset 7px 28px 139px 16px rgba(255, 255, 255, 1);
+  -moz-box-shadow: inset 7px 28px 139px 16px rgba(255, 255, 255, 1);
+  box-shadow: inset 7px 28px 139px 16px rgba(255, 255, 255, 1);
+}
+
 nav {
   display: flex;
   justify-content: center;
@@ -45,6 +51,16 @@ span {
 
 #play:hover {
   animation: anima 0.5s steps(2) infinite;
+}
+
+#particles-js {
+  background: blueviolet;
+  background-attachment: fixed;
+  background-blend-mode: soft-light;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh -70px);
 }
 
 @keyframes anima {

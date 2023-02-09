@@ -30,10 +30,10 @@
 
     <title>poke-Api-character-selector</title>
   </head>
-  <body>
-    <div>
+  <body style="background: blueviolet">
+    <main>
       <header id="main-selector" class="container">
-        <nav style="width: 70vi; height: 100vh" class="d-flex bd-highlight">
+        <nav style="width: 70vi; height: auto" class="d-flex bd-highlight">
           <ul
             style="
               list-style: none;
@@ -50,6 +50,7 @@
                 alt="Character-one"
                 style="width: 15vi; height: 23vh"
                 class="img-fluid"
+                data-id="0"
               />
             </li>
             <li>
@@ -58,6 +59,7 @@
                 alt="character-two"
                 style="width: 15vi; height: 23vh"
                 class="img-fluid"
+                data-id="1"
               />
             </li>
             <li style="grid-column: 1/1; grid-row: 1/1">
@@ -66,6 +68,7 @@
                 alt="character-three"
                 style="width: 15vi; height: 23vh"
                 class="img-fluid"
+                data-id="2"
               />
             </li>
             <li style="grid-column: 2/3; grid-column: 2/3">
@@ -74,11 +77,16 @@
                 alt="character-four"
                 style="width: 15vi; height: 23vh"
                 class="img-fluid"
+                data-id="3"
               />
             </li>
           </ul>
 
-          <ul style="list-style: none" class="p-2 flex-fill bd-highlight">
+          <ul
+            style="list-style: none"
+            class="p-2 flex-fill bd-highlight"
+            id="container-characters"
+          >
             <!-- <li class="animation"></li> -->
           </ul>
 
@@ -94,11 +102,15 @@
       </header>
 
       <footer id="footer-selector">
-        <div class="card mx-5" style="width: 80vi">
+        <div
+          class="card mx-5"
+          style="width: 80vi; background: none; border: none"
+        >
           <div class="card-body">
-            <h4>Name: <span>"Sabino"</span></h4>
+            <h4>Name: <span id="name">"Sabino"</span></h4>
             <article
               style="background: #34495e; border-radius: 20px 20px 0px 0px"
+              id="statisticTable"
             >
               <h5 style="padding-left: 2rem">HP</h5>
               :<span>477</span>
@@ -119,8 +131,13 @@
           </div>
         </div>
       </footer>
-    </div>
+    </main>
 
+    <div id="particles-js"></div>
+
+    <script src="./js/particles.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/selector.js"></script>
     <!-- https://as.com/meristation/2019/09/09/noticias/1568006818_089253.html -->
     <!-- <li class="animation"></li>
           <li class="animation character-two"></li>
