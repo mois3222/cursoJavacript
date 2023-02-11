@@ -1,3 +1,11 @@
+:root {
+  --statictis-bar-color: #34495e;
+  --light-border-green: lightseagreen;
+  --background-color-main: #8c48a1;
+  --background-white-ligth-color-card: whitesmoke;
+  --border-span: #808b96;
+}
+
 * {
   font-family: "Itim", cursive;
 }
