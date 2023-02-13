@@ -1,78 +1,348 @@
 :root {
   --statictis-bar-color: #34495e;
+  --clear-background: #bb8fce;
   --light-border-green: lightseagreen;
   --background-color-main: #8c48a1;
   --background-white-ligth-color-card: whitesmoke;
-  --border-span: #808b96;
+  --border: #808b96;
+  --power-button-color: crimson;
+  --frame-game-boy: #5d6d7e;
+  --target-card-one: #17a589;
+  --target-card-two: #148f77;
+  --target-card-three: #117864;
+  --letter-firs: #cb4335;
+  --letter-second: #3498db;
+  --letter-three: #f7dc6f;
+  --letter-finish: #2874a6;
+  --display-game-boy: #b2b57e;
+  --sm: 14px;
+  --md: 16px;
+  --lg: 18px;
 }
 
 * {
-  font-family: "Itim", cursive;
+  font-family: "Fredoka One", cursive;
 }
 
-img {
-  border-bottom: 1px solid lightseagreen;
-  border-right: 1px solid lightseagreen;
-  margin-top: 1rem;
-  /* margin: 1rem; */
-  padding: 1rem;
-  border-radius: 50px;
+#game_container {
+  display: grid;
+  place-content: center;
+  position: absolute;
+  z-index: -100;
+  height: 100vh;
+  width: 100%;
 }
 
-img:hover {
-  -webkit-box-shadow: inset 7px 28px 139px 16px rgba(255, 255, 255, 1);
-  -moz-box-shadow: inset 7px 28px 139px 16px rgba(255, 255, 255, 1);
-  box-shadow: inset 7px 28px 139px 16px rgba(255, 255, 255, 1);
+#game_boy_body {
+  height: 80vh;
+  text-align: center;
+  width: 224px;
 }
 
-nav {
+#game_boy_background {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  height: 80vh;
+  width: 224px;
+  background-color: var(--clear-background);
+  border-bottom-left-radius: 80px 20px;
+  border-bottom-right-radius: 80px 20px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  z-index: -10;
+  opacity: 0.3;
+}
+
+#game_boy_background-border {
+  display: flex;
+  justify-content: center;
+  height: 71vh;
+  width: 90%;
+  margin-top: 1.3rem;
+  border: 3px solid black;
+  border-bottom-left-radius: 90px 20px;
+  border-bottom-right-radius: 90px 20px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.target_card {
+  position: absolute;
+  height: 73%;
+  width: 74%;
+  top: 50px;
+  margin-right: 10px;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.card_black_green {
+  background-color: var(--target-card-three);
+  transform: translateX(10%);
+}
+
+.card_grey_green {
+  background-color: var(--target-card-two);
+  transform: translateX(5%);
+}
+
+.card_green {
+  background-color: var(--target-card-one);
+  transform: translateX(-5%);
+  width: 69%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#main-selector {
-  /* border: 3px solid papayawhip; */
-  width: max-content;
-  height: max-content;
+.aspects_left span {
+  display: inline-block;
+  background-color: black;
+  border-radius: 50px 50px 50px 50px;
+  width: 10px;
+  height: 10px;
+  scale: 0.6;
+  /* margin-top: 100px; */
 }
 
-h5 {
-  display: inline;
-  color: whitesmoke;
+.aspects_center {
+  margin-left: 1.5em;
 }
 
-span {
-  display: inline;
-  padding: 1rem;
-  color: #808b96;
-  border-right: 1px solid white;
-  border-radius: 0px 40px 40px 0px;
+.aspects_rigth {
+  height: 30px;
+  width: 7px;
+  background: black;
+  margin-left: 1.5em;
+  scale: 1.5;
 }
 
-#play {
-  transform: translate(1280%, -97%);
-  background-image: url("./img/boton-removebg-preview.png");
-  width: 68px;
-  height: 32px;
+#game_boy_display {
+  display: grid;
+  place-content: center;
+  height: 178px;
+  transform: translate(12.5%, 12%);
+  width: 85%;
+  /* background-color: var(--frame-game-boy); */
+  /* opacity: 0.7; */
+  border-bottom-left-radius: 90px 20px;
+  border-bottom-right-radius: 90px 20px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
-#play:hover {
-  animation: anima 0.5s steps(2) infinite;
-}
-
-#particles-js {
-  background: blueviolet;
-  background-attachment: fixed;
-  background-blend-mode: soft-light;
-  background-position: center;
-  background-size: cover;
+#game_boy_frame {
+  position: absolute;
+  z-index: -100;
+  height: 178px;
+  transform: translate(-3%, 5%);
   width: 100%;
-  height: calc(100vh -70px);
+  background-color: var(--frame-game-boy);
+  opacity: 0.7;
+  border-bottom-left-radius: 90px 20px;
+  border-bottom-right-radius: 90px 20px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 2px solid black;
 }
 
-@keyframes anima {
-  to {
-    background-position: -138px;
-  }
+.green-display {
+  position: relative;
+  transform: translateX(-3%);
+  padding: 0px;
+  margin: 0px;
+  z-index: 100;
+  opacity: 5;
+  width: 145px;
+  height: 130px;
+  background-color: var(--display-game-boy);
+  z-index: -10;
+  /* transform: rotate(45deg); */
+  -webkit-box-shadow: inset -8px -8px 0px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset -8px -8px 0px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: inset -8px -8px 0px 1px rgba(0, 0, 0, 0.75);
+  border: 3px solid #2e3b0b;
+}
+
+/* .display_light {
+  position: absolute;
+  transform: translate(-1%, 10.5%);
+  width: 190px;
+  scale: 0.9;
+  height: 130px;
+  background-color: transparent;
+  -webkit-box-shadow: 0px 0px 0px 4px #2e3b0b;
+  -moz-box-shadow: 0px 0px 0px 4px #2e3b0b;
+  box-shadow: 0px 0px 0px 4px #2e3b0b;
+} */
+
+.title {
+  transform: translate(0%, -70%);
+  color: white;
+}
+
+.title::first-line {
+  color: var(--letter-three);
+}
+
+.title::first-letter {
+  color: var(--letter-second);
+}
+
+.title span {
+  color: var(--letter-firs);
+}
+
+/* Here would be the game boy controls */
+
+.cross_piece {
+  position: relative;
+  z-index: -75;
+  width: 30px;
+  background-color: var(--border);
+}
+
+.circle-crooss-pice {
+  position: relative;
+  z-index: -77;
+  width: 30px;
+  height: 30px;
+  background-color: var(--background-color-main);
+  -webkit-box-shadow: 1px 0px 0px 35px var(--clear-background);
+  -moz-box-shadow: 1px 0px 0px 35px var(--clear-background);
+  box-shadow: 1px 0px 0px 35px var(--clear-background);
+
+  opacity: 0.5;
+}
+
+/* .button-decoration {
+  position: relative;
+  z-index: -100;
+  transform: translate(-60%, 70%);
+  width: 30px;
+  height: 7px;
+  background-color: var(--background-color-main);
+  -webkit-box-shadow: 2px 1px 0px 25px var(--clear-background);
+  -moz-box-shadow: 2px 1px 0px 25px var(--clear-background);
+  box-shadow: 2px 1px 0px 20px var(--clear-background);
+  opacity: 0.6;
+  border-radius: 30px 30px 30px 30px;
+} */
+
+.box-45deg {
+  position: relative;
+  border-radius: 360px;
+  height: 30px;
+  width: 8px;
+  z-index: -100;
+  background-color: var(--background-color-main);
+  opacity: 0.5;
+  transform: rotate(145deg);
+  -webkit-box-shadow: 2px 1px 0px 25px var(--clear-background);
+  -moz-box-shadow: 2px 1px 0px 25px var(--clear-background);
+  box-shadow: 2px 1px 0px 20px var(--clear-background);
+}
+
+.module {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  z-index: -10;
+  background-color: var(--background-color-main);
+  -webkit-box-shadow: 2px 1px 0px 25px var(--clear-background);
+  -moz-box-shadow: 2px 1px 0px 25px var(--clear-background);
+  box-shadow: 2px 1px 0px 6px var(--clear-background);
+  opacity: 0.5;
+  border-radius: 360px;
+}
+
+.module-select-start {
+  transform: translateX(-102%);
+}
+
+.module-A-B {
+  position: relative;
+  z-index: -100;
+  transform: translate(-102%) rotate(16deg);
+  width: 17px;
+
+  border-radius: 360px;
+}
+
+.button-a-b {
+  width: 17px;
+  transform: rotate(16deg);
+  border-radius: 360px;
+}
+/* Here would be the game boy controls */
+
+/*Here would be the decorations center of game boy css*/
+.game_boy_decoration_center {
+  display: flex;
+  justify-content: center;
+  width: 224px;
+  height: 60px;
+}
+
+#detail-center-principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: var(--background-color-main);
+  opacity: 0.5;
+  width: 65%;
+  height: 100%;
+  border: 1px solid var(--background-color-main);
+  border-radius: 10px;
+}
+
+#detail-center {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-column: 2;
+  grid-row: 2/2;
+  width: 100%;
+  height: 70%;
+  background-color: var(--clear-background);
+  border: 1px solid black;
+}
+
+.grid {
+  background-color: var(--statictis-bar-color);
+  width: 90%;
+  height: 100%;
+}
+
+.grid-one {
+  grid-column: 1;
+  grid-row: 2;
+  margin-left: 2px;
+}
+
+.grid-two {
+  grid-column: 3;
+  grid-row: 2/3;
+  margin-right: 5px;
+}
+
+/*Here would be the decorations center of game boy css*/
+
+#finishes-decoration {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 50%;
+  height: 10%;
+  /* border: 1px solid var(--border); */
+  transform: translate(100%, -70%) rotate(150deg);
+  margin-left: 30px;
+  scale: 0.8;
+}
+
+.output {
+  height: 80%;
+  width: 30%;
+  background-color: var(--border);
+  border: 1px solid var(--frame-game-boy);
+  border-radius: 360px;
 }

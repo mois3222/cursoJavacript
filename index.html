@@ -5,18 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="./style/style-selector.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Itim&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="./style/style-animation.css" />
 
-    <link
-      rel="shortcut icon"
-      href="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRgB36LX7j-3K0VnEFtQGQYWhVS3e3Kg8AVKD5JdJlHrLgUr9Zd"
-      type="image/x-icon"
-    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -24,122 +16,276 @@
       crossorigin="anonymous"
     />
 
-    <link rel="stylesheet" href="./style/style-selector.css" />
-
-    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
 
     <title>poke-Api-character-selector</title>
+    <script
+      src="https://kit.fontawesome.com/7d42726bc3.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body style="background: blueviolet">
-    <main>
-      <header id="main-selector" class="container">
-        <nav style="width: 70vi; height: auto" class="d-flex bd-highlight">
-          <ul
-            style="
-              list-style: none;
-              display: grid;
-              grid-template-columns: 1fr 1fr 1fr 1fr;
-              grid-template-rows: 1fr 1fr 1fr 1fr;
-              transform: translate(25%, 25%);
-            "
-            class="p-2 flex-fill bd-highlight"
-          >
-            <li style="grid-column: 1/2; grid-row: 2/2">
-              <img
-                src="./style/img/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5f756e43577547774a57767331773d3d2d3933383936343039312e31363263366231323136616164316537343936343235.gif"
-                alt="Character-one"
-                style="width: 15vi; height: 23vh"
-                class="img-fluid"
-                data-id="0"
-              />
-            </li>
-            <li>
-              <img
-                src="./style/img/8iekttpmyan51.gif"
-                alt="character-two"
-                style="width: 15vi; height: 23vh"
-                class="img-fluid"
-                data-id="1"
-              />
-            </li>
-            <li style="grid-column: 1/1; grid-row: 1/1">
-              <img
-                src="./style/img/1a0d2bebb79159e0050f8f005dc15707.gif"
-                alt="character-three"
-                style="width: 15vi; height: 23vh"
-                class="img-fluid"
-                data-id="2"
-              />
-            </li>
-            <li style="grid-column: 2/3; grid-column: 2/3">
-              <img
-                src="./style/img/original.gif"
-                alt="character-four"
-                style="width: 15vi; height: 23vh"
-                class="img-fluid"
-                data-id="3"
-              />
-            </li>
-          </ul>
+  <body>
+    <main id="game_container">
+      <div class="game_boy">
+        <section id="game_boy_box"></section>
 
-          <ul
-            style="list-style: none"
-            class="p-2 flex-fill bd-highlight"
-            id="container-characters"
-          >
-            <!-- <li class="animation"></li> -->
-          </ul>
-
-          <article class="p-2 flex-fill bd-highlight">
-            <img
-              src="./style/img/logo.webp"
-              alt="Logo"
-              style="width: 36vi; border: 0px"
-              class="img-fluid"
-            />
+        <section id="game_boy_body">
+          <article id="game_boy_background">
+            <div id="game_boy_background-border">
+              <div class="target_card card_black_green"></div>
+              <div class="target_card card_grey_green"></div>
+              <div class="target_card card_green">
+                <div id="details" class="d-flex justify-content-between">
+                  <div class="aspects aspects_left">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="aspects aspects_center">
+                    <!-- <i class="fa-solid fa-cutlery"></i> -->
+                    <i class="fa-solid fa-microchip" style="scale: 2.5"></i>
+                  </div>
+                  <div class="aspects aspects_rigth"></div>
+                </div>
+              </div>
+            </div>
           </article>
-        </nav>
-      </header>
 
-      <footer id="footer-selector">
-        <div
-          class="card mx-5"
-          style="width: 80vi; background: none; border: none"
-        >
-          <div class="card-body">
-            <h4>Name: <span id="name">"Sabino"</span></h4>
-            <article
-              style="background: #34495e; border-radius: 20px 20px 0px 0px"
-              id="statisticTable"
+          <article id="game_boy_display">
+            <ul
+              class="green-display row row-cols-2 container p-0"
+              style="
+                list-style: none;
+                scale: 0.9;
+                transform: translate(4%, -10%);
+              "
             >
-              <h5 style="padding-left: 2rem">HP</h5>
-              :<span>477</span>
-              <h5>ATQ</h5>
-              :<span>365</span>
-              <h5>DEF</h5>
-              :<span> 141</span>
-              <h5>ATQ ESP</h5>
-              :<span> 71</span>
-              <h5>DEF ESP</h5>
-              :<span> 118</span>
-              <h5>VEL</h5>
-              :<span> 251</span>
-              <h5>TOTAL</h5>
-              :<span> 1560</span>
-            </article>
-            <a href="./html/main.html"><div id="play"></div></a>
-          </div>
-        </div>
-      </footer>
+              <i
+                class="col p-0"
+                style="
+                  width: 0px;
+                  height: 0px;
+                  grid-row: 1/1;
+                  border-style: solid;
+                  border-width: 50px 50px 0 0;
+                  border-color: aliceblue transparent transparent transparent;
+                  opacity: 0.3;
+                "
+              ></i>
+              <i
+                class="col p-0"
+                style="
+                  width: 50px;
+                  height: 50px;
+                  transform: rotate(45deg);
+                  background-color: aliceblue;
+                  border-radius: 30px 170px;
+                  transform: rotate(270deg);
+                  opacity: 0.3;
+                "
+              ></i>
+
+              <i class="col p-0">
+                <img
+                  src="./style/img/8iekttpmyan51.gif"
+                  alt="Character-one"
+                  style="
+                    width: 90px;
+                    height: 120px;
+                    transform: translate(50%, -39%);
+                    position: relative;
+                    z-index: -101;
+                  "
+                  data-id="0"
+                />
+              </i>
+
+              <i
+                class="col p-0"
+                style="
+                  width: 0px;
+                  height: 0px;
+                  grid-row: 4/4;
+                  grid-column: 3/4;
+                  border-style: solid;
+                  border-width: 0 0 80px 80px;
+                  border-color: transparent transparent aliceblue transparent;
+                  opacity: 0.3;
+                  transform: translate(10%, -10%);
+                "
+              ></i>
+            </ul>
+
+            <div id="game_boy_frame"></div>
+          </article>
+
+          <h6 class="title">
+            Cs<span>s</span><br />
+            Game Boy
+          </h6>
+
+          <!--Game boy distributation bottons-->
+          <article id="game_boy_buttons_distribution">
+            <ol
+              style="
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
+                margin: 0px;
+                padding: 0px;
+                width: 230px;
+                height: 120px;
+                scale: 0.8;
+              "
+            >
+              <button
+                class="cross_piece arrow_up"
+                style="
+                  grid-column: 2;
+                  grid-row: 1/1;
+                  border-bottom-right-radius: 50px 20px;
+                  border-bottom-left-radius: 50px 20px;
+                "
+              >
+                <i class="fa-solid fa-caret-up"></i>
+              </button>
+
+              <button
+                class="cross_piece arrow_left"
+                style="
+                  grid-column: 1/1;
+                  grid-row: 2/2;
+
+                  border-top-right-radius: 15px 35px;
+                  border-bottom-right-radius: 15px 35px;
+                "
+              >
+                <i class="fa-solid fa-caret-left"></i>
+              </button>
+
+              <button
+                class="cross_piece arrow_rigth"
+                style="
+                  grid-column: 3/3;
+                  grid-row: 3/2;
+                  border-top-left-radius: 15px 35px;
+                  border-bottom-left-radius: 15px 35px;
+                "
+              >
+                <i class="fa-solid fa-caret-right"></i>
+              </button>
+
+              <button
+                class="cross_piece arrow_down"
+                style="
+                  grid-column: 2/2;
+                  grid-row: 3;
+                  border-top: 0px;
+                  border-top-right-radius: 50px 20px;
+                  border-top-left-radius: 50px 20px;
+                "
+              >
+                <i class="fa-solid fa-caret-down"></i>
+              </button>
+
+              <div
+                style="
+                  grid-column: 4;
+                  grid-row: 4/4;
+                  display: flex;
+                  position: relative;
+                  z-index: -10;
+                "
+              >
+                <button class="cross_piece button-a-b">a</button>
+
+                <div class="module module-A-B"></div>
+              </div>
+
+              <div
+                style="
+                  grid-column: 6;
+                  grid-row: 4/6;
+                  display: flex;
+                  position: relative;
+                  z-index: -10;
+                "
+              >
+                <button class="cross_piece button-a-b">b</button>
+
+                <div class="module module-A-B"></div>
+              </div>
+
+              <div style="grid-column: 9; grid-row: 3; display: flex">
+                <button
+                  class="cross_piece button_Select rounded-circle"
+                  style="position: relative; z-index: 1"
+                >
+                  <i class="fa-regular fa-object-ungroup"></i>
+                </button>
+
+                <div class="module module-select-start"></div>
+              </div>
+
+              <div style="grid-column: 6; grid-row: 1; display: flex">
+                <button
+                  class="cross_piece button_Start rounded-circle"
+                  style="position: relative; z-index: 1"
+                >
+                  <i class="fa-solid fa-circle-play p-0 m-0"></i>
+                </button>
+
+                <div class="module module-select-start"></div>
+              </div>
+              <!--Buttons decoration-->
+
+              <div
+                class="circle-crooss-pice rounded-circle border border-dark"
+                style="grid-column: 2; grid-row: 2/2"
+              ></div>
+
+              <div
+                class="box-45deg border border-dark m-0 p-0"
+                style="grid-column: 7; grid-row: 2"
+              ></div>
+              <!--Buttons decoration-->
+            </ol>
+          </article>
+          <!--Game boy distributation bottons/-->
+
+          <article class="game_boy_decoration_center">
+            <div id="detail-center-principal">
+              <div id="detail-center">
+                <div class="grid grid-one"></div>
+                <div class="grid grid-two"></div>
+              </div>
+            </div>
+          </article>
+
+          <footer id="finishes-decoration">
+            <div class="output output_one"></div>
+            <div class="output output_two"></div>
+            <div class="output output_three"></div>
+            <div class="output output_four"></div>
+            <div class="output output_five"></div>
+            <div class="output output_six"></div>
+          </footer>
+        </section>
+      </div>
     </main>
 
-    <div id="particles-js"></div>
-
-    <!-- <script src="./js/particles.js"></script>
+    <!-- <div id="particles-js"></div>
+    <script src="./js/particles.js"></script>
     <script src="./js/app.js"></script>
-    <script src="./js/selector.js"></script> -->
-    <!-- https://as.com/meristation/2019/09/09/noticias/1568006818_089253.html -->
-    <!-- <li class="animation"></li>
+    <script src="./js/selector.js"></script>
+    https://as.com/meristation/2019/09/09/noticias/1568006818_089253.html
+    <li class="animation"></li>
           <li class="animation character-two"></li>
           <li class="animation character-three"></li>
           <li class="animation character-four"></li> -->
